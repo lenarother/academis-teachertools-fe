@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "marked": "^4.0.17",
+    "mdb-vue-ui-kit": "^1.14.0",
+    "quizdown": "^0.5.0",
+    "vue-markdown": "^2.2.4",
+    "vue-plugin-load-script": "^2.1.1",
+    "vue3-markdown-it": "^1.0.10"
+  }
+}
