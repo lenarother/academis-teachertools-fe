@@ -7,7 +7,7 @@
     <p class="subtitle">Question</p>
     <textarea class="textarea" v-model="questionText" placeholder="Paste your question here" rows="10"></textarea>
     <br>
-    <a class="button is-primary is-light is-medium is-focused" v-on:click="celebrate">
+    <a class="button is-primary is-light is-medium is-focused" v-on:click="postQuestion(questionText)">
       Post your question
     </a>
 
@@ -30,6 +30,7 @@
 </template>
 
 <script>
+  import axios from 'axios';
   export default {
     data() {
       return {
@@ -43,7 +44,32 @@
 - flask
 - matplotlib`
       }
-    }
- }
-</script>
+    },
+    methods: {
+        postQuestion: function(questionText) {
 
+          event.preventDefault();
+          let self = this
+          axios.post(
+            'https://secure-thicket-32032.herokuapp.com/api/v1/quiz/',
+            {
+              body: questionText,
+            })
+            .then(function(response){
+              console.log(response.status)
+              //const status = JSON.parse(response.data.response.status);
+
+              //redirect logic
+              if (response.status == '201') {
+                console.log('HERE')
+                console.log(response)
+
+                self.$router.push({ name: "Question", params: {uuid: response.data.uuid} })
+              }
+            }
+          )
+        }
+      },
+    }
+
+</script>
