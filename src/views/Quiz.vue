@@ -17,7 +17,9 @@
     <p class="subtitle">Preview</p>
     <div class="card" rows="10">
       <div class="card-content" rows="10">
-        <p>{{ questionText }}</p>
+        <p>
+          <vue-markdown-it :source='questionText' />
+        </p>
       </div>
     </div>
   </div>
@@ -31,6 +33,7 @@
 
 <script>
   import axios from 'axios';
+  import VueMarkdownIt from 'vue3-markdown-it';
   export default {
     data() {
       return {
@@ -44,6 +47,9 @@
 - flask
 - matplotlib`
       }
+    },
+    components: {
+      VueMarkdownIt
     },
     methods: {
         postQuestion: function(questionText) {
