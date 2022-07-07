@@ -1,4 +1,10 @@
 <template>
+
+  <p> fkfge fhewgf fhoufoerg </p>
+
+  <section class="section container is-fluid ">
+  <div class="block ml-6 mr-6">
+
   <vue-highcharts
     type="chart"
     :options="chartOptions"
@@ -7,15 +13,15 @@
     :animateOnUpdate="true"
     @rendered="onRender"
   />
+
+</div>
+</section>
+
 </template>
 <script>
 import { computed } from "vue";
 import VueHighcharts from "vue3-highcharts";
-import StockCharts from "highcharts/modules/drilldown";
-import StockCharts2 from "highcharts/modules/exporting";
 import HighCharts from "highcharts";
-StockCharts(HighCharts);
-StockCharts2(HighCharts);
 
 export default {
   name: "SimpleChart",
@@ -29,39 +35,20 @@ export default {
 
     const fe2 = [
       {
-        name: "Anuncio Facebook",
-        y: 14000,
-        drilldown: "Chrome",
+        name: "Anuncio Facebook Anuncio Facebook Anuncio Facebook Anuncio Facebook Anuncio Facebook Anuncio Facebook",
+        y: 5,
       },
       {
-        name: "Anuncio Instagram",
-        y: 8000,
-        drilldown: "Firefox",
+        name: "Anuncio Instagram Anuncio Instagram Anuncio Instagram Anuncio Instagram Anuncio Instagram ",
+        y: 10,
       },
       {
-        name: "Influencer X",
-        y: 7345,
-        drilldown: "Internet Explorer",
+        name: "Influencer X Influencer X Influencer X Influencer X Influencer X Influencer X Influencer X",
+        y: 2,
       },
       {
         name: "Influencer Y",
-        y: 5558,
-        drilldown: "Safari",
-      },
-      {
-        name: "Influencer Z",
-        y: 4020,
-        drilldown: "Edge",
-      },
-      {
-        name: "Twitter",
-        y: 1920,
-        drilldown: "Opera",
-      },
-      {
-        name: "Outros",
-        y: 7620,
-        drilldown: null,
+        y: 8,
       },
     ];
 
@@ -105,7 +92,7 @@ export default {
       ],
       yAxis: {
         title: {
-          text: "Total de acessos",
+          text: "Votes",
         },
       },
       legend: {
@@ -141,80 +128,6 @@ export default {
           data: fe2,
         },
       ],
-      drilldown: {
-        series: [
-          {
-            name: "Anuncio Facebook",
-            id: "Chrome",
-
-            xAxis: 1,
-            data: [
-              [1619337600000, 20],
-              [1619424000000, 30],
-              [1619510400000, 40],
-              [1619596800000, 50],
-              [1619683200000, 60],
-            ],
-          },
-          {
-            name: "Anuncio Instagram",
-            id: "Firefox",
-            data: [
-              ["v58.0", 1.02],
-              ["v57.0", 7.36],
-              ["v56.0", 0.35],
-              ["v55.0", 0.11],
-              ["v54.0", 0.1],
-              ["v52.0", 0.95],
-              ["v51.0", 0.15],
-              ["v50.0", 0.1],
-              ["v48.0", 0.31],
-              ["v47.0", 0.12],
-            ],
-          },
-          {
-            name: "Internet Explorer",
-            id: "Internet Explorer",
-            data: [
-              ["v11.0", 6.2],
-              ["v10.0", 0.29],
-              ["v9.0", 0.27],
-              ["v8.0", 0.47],
-            ],
-          },
-          {
-            name: "Safari",
-            id: "Safari",
-            data: [
-              ["v11.0", 3.39],
-              ["v10.1", 0.96],
-              ["v10.0", 0.36],
-              ["v9.1", 0.54],
-              ["v9.0", 0.13],
-              ["v5.1", 0.2],
-            ],
-          },
-          {
-            name: "Edge",
-            id: "Edge",
-            data: [
-              ["v16", 2.6],
-              ["v15", 0.92],
-              ["v14", 0.4],
-              ["v13", 0.1],
-            ],
-          },
-          {
-            name: "Opera",
-            id: "Opera",
-            data: [
-              ["v50.0", 0.96],
-              ["v49.0", 0.82],
-              ["v12.1", 0.14],
-            ],
-          },
-        ],
-      },
     }));
 
     const onRender = () => {
